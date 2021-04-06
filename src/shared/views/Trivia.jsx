@@ -40,7 +40,7 @@ export const Trivia = () => {
   };
 
   const handleQuestionJump = (step) => {
-    if(questionNo < 7 && step === "forth") {
+    if(questionNo < 9 && step === "forth") {
       updateQuestionNo(questionNo + 1);
     }
     if(questionNo > 0 && step === "back") {
@@ -53,11 +53,12 @@ export const Trivia = () => {
   }
 
   if(!isLoading){
+    //console.log(question);
     return (
       <React.Fragment>
         <p style={counterStyle}>SCORE: {score}/10</p>
         <Card
-          question = {question[questionNo].question}
+          question = {question[questionNo]}
           answers = {question[questionNo].incorrect_answers}
           correctAnswer = {question[questionNo].correct_answer}
           isCorrect = {handleCallback}
